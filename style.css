@@ -131,6 +131,7 @@ h4 {
 svg {
     width: 10px;
     fill: white;
+    pointer-events: none;
 }
 
 
