@@ -1,43 +1,148 @@
-.app{
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: fit-content;
-  padding:10px;
-  text-align: center;
-  gap:10px;
-  align-items: stretch;
-
+html{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-html{
-  display: flex;
-  justify-content: center;
+header{
+    text-align: center;
+}
+
+h4 {
+    margin-block-start: 10px;
+    margin-block-end: 5px;
+    margin-left: 15px;
+}
+
+.todo__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    width: fit-content;
+
 }
 
 .form{
-  display: flex;
-  flex-direction: row;
-  gap:10px;
+    display: flex;
+    gap:10px;
+    flex-direction: row;
 }
 
+.form input {
+    border: 1px rgb(177, 177, 177) solid;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+}
+
+.form button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 65px;
+    font-size: 16px;
+}
+
+.lists-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.pending-tasks,
+.done-tasks {
+    border: 1px #e6e2d3 solid;
+    border-radius: 5px;
+    align-items: stretch;
+    min-height: 550px;
+    background-color: #f0f0f0;
+}
+
+.done-list,
 .todo-list{
-  padding:0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  gap:10px;
+    display: flex;
+    list-style-type: none;
+    padding:10px;
+    width: 40vw;
+    flex-direction: column;
+    gap:8px;
+    margin-top: 0;
 }
 
+.done-list li,
 .todo-list li{
-  display: flex;
-  justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+    padding:10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e6e2d3;
 }
-.todo-list li span{
-  flex-grow: 1;
-  text-align: center;
+
+.btn--delete{
+    background-color: #c94c4c;
+}
+
+.btn--edit {
+    background-color: #008cba;
+}
+
+.move-left,
+.move-right {
+    background-color: #479e4a;
+}
+
+.move-left,
+.move-right,
+.btn--edit,
+.btn--delete {
+    width: 10%;
+    max-width: 40px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.done-list li span,
+.todo-list li span {
+    width: 75%;
+    font-size: 18px;
+    color: rgb(48, 48, 48);
+    display: inline-block;
+    max-width: 70%; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    vertical-align: middle; 
+    text-align: center; 
+}
+
+.update-input {
+    width: 75%;
+}
+
+svg {
+    width: 20px;
+    fill: white;
 }
 
 
+@media (max-width: 800px) {
+    .lists-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .done-list,
+    .todo-list {
+        width: 80vw;
+    }
+}
